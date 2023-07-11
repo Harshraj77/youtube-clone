@@ -19,6 +19,8 @@ const VideoDetail = () => {
 
     fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
       .then((data) => setVideos(data.items))
+
+      window.scrollTo(0, 0);
   }, [id]);
 
   if(!videoDetail?.snippet) return <Loader />;
